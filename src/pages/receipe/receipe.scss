@@ -1,0 +1,52 @@
+page-receipe {
+
+    .image-container {
+
+        background-size: cover;
+        min-height: 200px;
+        /*background-image: url(/assets/img/2.jpg);*/
+
+    }
+
+    @media(min-width: 0px) {
+
+        .images {
+
+            column-count: 2;
+
+        }
+    }
+
+    @media(min-width: 620px) {
+
+        .images {
+
+            column-count: 3;
+
+        }
+    }
+
+    @media (min-width: 820px) {
+
+        .images {
+
+            column-count: 4;
+
+        }
+    }
+
+    .one-image {
+      /*  margin: 0.5px;*/
+    }
+
+
+    ion-page.modal {
+        padding: 30px;
+        background: rgba(0,0,0,0.5);
+        height: 50%;
+        width: 50%;
+    }
+    .desc{
+        font-size: 12pt !important;
+    }
+}

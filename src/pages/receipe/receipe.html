@@ -1,0 +1,67 @@
+<ion-header>
+    <ion-navbar color="orange">
+        <ion-title>
+            레시피 목록
+        </ion-title>
+    </ion-navbar>
+    <ion-toolbar>
+
+        <ion-segment color='orange' [(ngModel)]="galleryType">
+
+
+            <ion-segment-button value="regular">regular</ion-segment-button>
+            <ion-segment-button value="instagram">instagram</ion-segment-button>
+            <ion-segment-button value="pinterest">pinterest</ion-segment-button>
+
+        </ion-segment>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+
+
+    <ion-fab top right mini>
+        <button (click)="openModal()" ion-fab color="orange">Search</button>
+    </ion-fab>
+    <div [ngSwitch]="galleryType" class="hanna">
+        <ion-grid *ngSwitchCase="'regular'">
+            <ion-row>
+                <ion-col class="receipeOne" id="{{receipeOne.id}}" col-6="" col-md-4 col-xl-3
+                         *ngFor="let receipeOne of receipeList">
+
+                    <div (click)="openWebview(receipeOne.url)" class="image-container"
+                         [style.background-image]="'url(http://kyungjoon.ipdisk.co.kr:3000/receipe/imageView?id=%27'+receipeOne.image + '%27)'">
+                    </div>
+                    <div class="desc" style="text-align: center; font-family: Hanna"> {{receipeOne.title}}</div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+
+
+        <div class="instagram" *ngSwitchCase="'instagram'">
+            <div class="one-image" *ngFor="let receipeOne of receipeList">
+
+                <img (click)="openWebview(receipeOne.url)"
+                     src="http://kyungjoon.ipdisk.co.kr:3000/receipe/imageView?id=%27{{receipeOne.image}}%27">
+                <div class="desc" style="text-align: center; font-family: Hanna"><h1> {{receipeOne.title}}</h1></div>
+            </div>
+        </div>
+
+        <div class="images" *ngSwitchCase="'pinterest'">
+            <div class="one-image" *ngFor="let receipeOne of receipeList">
+                <div>
+                    <img (click)="openWebview(receipeOne.url)"
+                         src="http://kyungjoon.ipdisk.co.kr:3000/receipe/imageView?id=%27{{receipeOne.image}}%27">
+                    <span class="desc" style="text-align: center; font-family: Hanna">{{receipeOne.title}}</span>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+</ion-content>

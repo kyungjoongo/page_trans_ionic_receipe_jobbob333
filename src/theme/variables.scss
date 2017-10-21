@@ -1,0 +1,94 @@
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/theming/
+
+// Font path is used to include ionicons,
+// roboto, and noto sans fonts
+$font-path: "../assets/fonts";
+
+// The app direction is used to include
+// rtl styles in your app. For more info, please see:
+// http://ionicframework.com/docs/theming/rtl-support/
+$app-direction: ltr;
+
+@import "ionic.globals";
+@import "theme.dark.scss";
+@import "theme.light.scss";
+@import "theme.green.scss";
+
+$colors: (
+    primary: #488aff,
+    secondary: #32db64,
+    danger: #f53d3d,
+    light: #f4f4f4,
+    dark: #222,
+    yellow: yellow,
+    clova: #77ffa8,
+    aqua: aqua,
+    orange : #ffa500
+);
+
+
+
+@import "ionic.theme.default";
+
+// Ionicons
+// --------------------------------------------------
+// The premium icon font for Ionic. For more info, please see:
+// http://ionicframework.com/docs/ionicons/
+
+@import "ionic.ionicons";
+
+// Fonts
+// --------------------------------------------------
+
+@import "roboto";
+@import "noto-sans";
+@import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+
+
+.hanna{
+    font-family: 'Hanna', serif;
+}
+
+body {
+    -webkit-user-select: auto !important;
+
+}
+
+ion-modal.my-popup {
+    @media (min-width: 500px) and (min-height: 300px) {
+        ion-backdrop {
+            visibility: visible;
+        }
+        body {
+            overflow-y: scroll;
+        }
+    }
+
+    .modal-wrapper {
+        position: absolute;
+        overflow: hidden;
+        max-width: 350px;
+        border-radius: 2px;
+        width: 500px;
+        height: 300px;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        border: 0;
+        box-shadow: 0 16px 20px rgba(0, 0, 0, .4);
+        background-color: #fafafa;
+
+    }
+
+    body {
+        overflow-y: hidden;
+    }
+
+}
+
+ion-title{
+    font-family: 'Hanna';
+}

@@ -1,0 +1,8 @@
+{
+  "name": "page_trans",
+  "app_id": "a8e7a8b9",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
